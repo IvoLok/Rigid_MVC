@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RigidNet", "RigidNet\RigidNet.csproj", "{99BA180A-42AA-4B18-AD64-E2CA2969BCFE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RigidNet", "RigidNet\RigidNet.csproj", "{99BA180A-42AA-4B18-AD64-E2CA2969BCFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RigidNetRazor_Temp", "RigidNetRazor_Temp\RigidNetRazor_Temp.csproj", "{E3DB236C-E877-4733-80B8-F0C99797CF7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rigid.DataAccess", "Rigid.DataAccess\Rigid.DataAccess.csproj", "{F00802FE-AB3B-460A-A618-F8CDFA50B0D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rigid.Models", "Rigid.Models\Rigid.Models.csproj", "{DD7C53A0-3C83-4BEF-B3D4-BA33F0C1659B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rigid.Utility", "Rigid.Utility\Rigid.Utility.csproj", "{64D98387-0AB5-4F02-A52A-430C843A100E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,22 @@ Global
 		{99BA180A-42AA-4B18-AD64-E2CA2969BCFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99BA180A-42AA-4B18-AD64-E2CA2969BCFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99BA180A-42AA-4B18-AD64-E2CA2969BCFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3DB236C-E877-4733-80B8-F0C99797CF7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3DB236C-E877-4733-80B8-F0C99797CF7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3DB236C-E877-4733-80B8-F0C99797CF7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3DB236C-E877-4733-80B8-F0C99797CF7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F00802FE-AB3B-460A-A618-F8CDFA50B0D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F00802FE-AB3B-460A-A618-F8CDFA50B0D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F00802FE-AB3B-460A-A618-F8CDFA50B0D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F00802FE-AB3B-460A-A618-F8CDFA50B0D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD7C53A0-3C83-4BEF-B3D4-BA33F0C1659B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD7C53A0-3C83-4BEF-B3D4-BA33F0C1659B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD7C53A0-3C83-4BEF-B3D4-BA33F0C1659B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD7C53A0-3C83-4BEF-B3D4-BA33F0C1659B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64D98387-0AB5-4F02-A52A-430C843A100E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64D98387-0AB5-4F02-A52A-430C843A100E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64D98387-0AB5-4F02-A52A-430C843A100E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64D98387-0AB5-4F02-A52A-430C843A100E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

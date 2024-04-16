@@ -1,4 +1,4 @@
-namespace RigidNet.Models
+namespace Rigid.Models
 {
     public class ErrorViewModel
     {
