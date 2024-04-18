@@ -4,8 +4,9 @@ using Rigid.DataAccess.Repository;
 using Rigid.DataAccess.Repository.IRepository;
 using Rigid.Models;
 
-namespace RigidNet.Controllers
+namespace RigidNet.Areas.Admin.Controllers
 {
+	[Area("Admin")]
 	public class CategoryController : Controller
 	{
 		private readonly IUnitOfWork _unitOfWork;
