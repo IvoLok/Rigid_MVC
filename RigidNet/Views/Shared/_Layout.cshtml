@@ -30,7 +30,7 @@
 							</a>
 							<ul class="dropdown-menu">
 								<li><a class="dropdown-item" asp-area="Admin" asp-controller="Category" asp-action="Index">Category</a></li>
-								<li><a class="dropdown-item" href="#">Another action</a></li>
+								<li><a class="dropdown-item" asp-area="Admin" asp-controller="Product" asp-action="Index">Product</a></li>
 								<li><hr class="dropdown-divider"></li>
 								<li><a class="dropdown-item" href="#">Something else here</a></li>
 							</ul>
@@ -49,12 +49,14 @@
 			@RenderBody()
 		</main>
 	</div>
+	<div style="bottom:0;position: fixed; width:100%;">
+		<footer class="border-top footer text-muted">
+			<div class="container">
+				&copy; 2024 - RigidNet <i class="bi bi-heart-fill"></i> - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+			</div>
+		</footer>
+	</div>
 
-	<footer class="border-top footer text-muted">
-		<div class="container">
-			&copy; 2024 - RigidNet <i class="bi bi-heart-fill"></i> - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-		</div>
-	</footer>
 	<script src="~/lib/jquery/dist/jquery.min.js"></script>
 	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="~/js/site.js" asp-append-version="true"></script>

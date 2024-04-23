@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Rigid.DataAccess.Data;
 
@@ -10,9 +11,11 @@ using Rigid.DataAccess.Data;
 namespace Rigid.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240423144254_AddedForeignKeyForCategoryProductRelation")]
+    partial class AddedForeignKeyForCategoryProductRelation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -85,10 +88,6 @@ namespace Rigid.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ImageUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<double>("ListPrice")
                         .HasColumnType("float");
 
@@ -119,7 +118,6 @@ namespace Rigid.DataAccess.Migrations
                             CategoryId = 1,
                             Description = "Fortune of Time, vitae euismod velit sollicitudin ac. Fortune of Time nibh ut ultricies.\r\n\r\nNunc Fortune of Time ",
                             ISBN = "SWD9999001",
-                            ImageUrl = "",
                             ListPrice = 99.0,
                             Price = 90.0,
                             Price100 = 80.0,
@@ -133,7 +131,6 @@ namespace Rigid.DataAccess.Migrations
                             CategoryId = 2,
                             Description = "Dark Skies. Praesent molestie orci augue, vitae euismod velit Dark Skies. Praesent vestibulum facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra Dark Skies. ",
                             ISBN = "CAW777777701",
-                            ImageUrl = "",
                             ListPrice = 40.0,
                             Price = 30.0,
                             Price100 = 20.0,
@@ -147,7 +144,6 @@ namespace Rigid.DataAccess.Migrations
                             CategoryId = 3,
                             Description = "Vanish in the Sunset. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Vanish in the Sunset ut ultricies.\r\n\r\nNunc malesuada viverra Vanish in the Sunset. ",
                             ISBN = "RITO5555501",
-                            ImageUrl = "",
                             ListPrice = 55.0,
                             Price = 50.0,
                             Price100 = 35.0,
@@ -161,7 +157,6 @@ namespace Rigid.DataAccess.Migrations
                             CategoryId = 1,
                             Description = "Cotton Candy. Praesent molestie orci augue, vitae euismod velit sollicitudin ac. Cotton Candy facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra Cotton Candy. ",
                             ISBN = "WS3333333301",
-                            ImageUrl = "",
                             ListPrice = 70.0,
                             Price = 65.0,
                             Price100 = 55.0,
@@ -175,7 +170,6 @@ namespace Rigid.DataAccess.Migrations
                             CategoryId = 2,
                             Description = "Rock in the Ocean, vitae euismod velit sollicitudin ac. Rock in the Ocean facilisis nibh ut ultricies.\r\n\r\nNunc malesuada viverra Rock in the Ocean. ",
                             ISBN = "SOTJ1111111101",
-                            ImageUrl = "",
                             ListPrice = 30.0,
                             Price = 27.0,
                             Price100 = 20.0,
@@ -189,7 +183,6 @@ namespace Rigid.DataAccess.Migrations
                             CategoryId = 2,
                             Description = "Leaves and Wonders sodales libero. Praesent molestie orci augue, Leaves and Wonders velit sollicitudin ac. Leaves and Wonders facilisis nibh ut ultricies.\r\n\r\nNunc Leaves and Wonders. ",
                             ISBN = "FOT000000001",
-                            ImageUrl = "",
                             ListPrice = 25.0,
                             Price = 23.0,
                             Price100 = 20.0,
