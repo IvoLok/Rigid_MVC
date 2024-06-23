@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace Rigid.Models
 {
@@ -44,8 +45,12 @@ namespace Rigid.Models
 		public double Price100 { get; set; }
 
 		public int CategoryId { get; set; }
+		
 		[ForeignKey("CategoryId")]
+		[ValidateNever]
 		public Category Category { get; set; }
+		
+		[ValidateNever]
 		public string ImageUrl { get; set; }
 	}
 }
