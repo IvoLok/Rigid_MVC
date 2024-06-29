@@ -21,6 +21,7 @@ namespace Rigid.DataAccess.Repository
 		}
 		public void Save()
 		{
+			//Decide on: SqlException: Cannot insert the value NULL into column 'ImageUrl', table 'Rigid.dbo.Products'; column does not allow nulls. 
 			_db.SaveChanges();
 		}
 	}
