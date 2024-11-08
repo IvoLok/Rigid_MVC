@@ -1,8 +1,10 @@
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using Rigid.DataAccess.Data;
 using Rigid.DataAccess.Repository;
 using Rigid.DataAccess.Repository.IRepository;
+using Rigid.Utility;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,13 +12,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 	options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-//builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).
 builder.Services.AddIdentity<IdentityUser, IdentityRole>().
 	AddEntityFrameworkStores<ApplicationDbContext>()
-	.AddDefaultUI()
-	.AddDefaultTokenProviders();//Register Fix
+.AddDefaultTokenProviders();
 builder.Services.AddRazorPages();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IEmailSender, EmailSender>();
 
 var app = builder.Build();
 
