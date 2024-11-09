@@ -6,10 +6,13 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading;
 using System.Threading.Tasks;
+using Rigid.Models;
+using Rigid.Utility;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -20,8 +23,6 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
-using Rigid.Models;
-using Rigid.Utility;
 
 namespace RigidNet.Areas.Identity.Pages.Account
 {
@@ -109,6 +110,15 @@ namespace RigidNet.Areas.Identity.Pages.Account
 
 			[ValidateNever]
 			public IEnumerable<SelectListItem> RoleList { get; set; }
+
+			[Required]
+			public string Name { get; set; }
+			public string? StreetAdress { get; set; }
+			public string? City { get; set; }
+			public string? State { get; set; }
+			public string? PostalCode { get; set; }
+			public string? PhoneNumber { get; set; }
+
 		}
 
 
@@ -139,6 +149,14 @@ namespace RigidNet.Areas.Identity.Pages.Account
 
 				await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
 				await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
+				
+				user.Name = Input.Name;
+				user.StreetAddress = Input.StreetAdress;
+				user.City = Input.City;
+				user.State = Input.State;
+				user.PostalCode = Input.PostalCode;
+				user.PhoneNumber = Input.PhoneNumber;
+
 				var result = await _userManager.CreateAsync(user, Input.Password);
 
 				if (result.Succeeded)
