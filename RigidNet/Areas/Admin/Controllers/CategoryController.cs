@@ -1,12 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Rigid.DataAccess.Data;
 using Rigid.DataAccess.Repository;
 using Rigid.DataAccess.Repository.IRepository;
 using Rigid.Models;
+using Rigid.Utility;
 
 namespace RigidNet.Areas.Admin.Controllers
 {
 	[Area("Admin")]
+	[Authorize(Roles = SD.Role_Admin)]
 	public class CategoryController : Controller
 	{
 		private readonly IUnitOfWork _unitOfWork;
