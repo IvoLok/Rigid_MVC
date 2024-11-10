@@ -14,6 +14,7 @@ namespace Rigid.DataAccess.Data
 
 		public DbSet<Category> Categories { get; set; }
 		public DbSet<Product> Products { get; set; }
+		public DbSet<Company> Companies { get; set; }
 		public DbSet<ApplicationUser> ApplicationUsers { get; set; }
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -25,6 +26,11 @@ namespace Rigid.DataAccess.Data
 				new Category { Id = 1, Name = "Action", DisplayOrder = 1 },
 				new Category { Id = 2, Name = "SciFi", DisplayOrder = 2 },
 				new Category { Id = 3, Name = "History", DisplayOrder = 3 });
+
+			modelBuilder.Entity<Company>().HasData(
+				new Company { Id = 1, Name = "BookWise", StreetAddress = "123 BookWise St", City = "BookWise City", State = "LA", PhoneNumber = "123 BookWise 809", PostalCode = "1234" },
+				new Company { Id = 2, Name = "Worm Books", StreetAddress = "5N WormBooks Main St", City = "New WormBooks", State = "NV", PhoneNumber = "123 WormBooks 809", PostalCode = "5678" },
+				new Company { Id = 3, Name = "Bumble Pages", StreetAddress = "1 BumblePages St", City = "Bumble Pages Town", State = "NY", PhoneNumber = "", PostalCode = "8912" });
 
 			modelBuilder.Entity<Product>().HasData(
 				new Product

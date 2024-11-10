@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Rigid.DataAccess.Data;
 
@@ -11,9 +12,11 @@ using Rigid.DataAccess.Data;
 namespace Rigid.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241110082609_CompanyTable")]
+    partial class CompanyTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -300,38 +303,6 @@ namespace Rigid.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Companies");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            City = "BookWise City",
-                            Name = "BookWise",
-                            PhoneNumber = "123 BookWise 809",
-                            PostalCode = "1234",
-                            State = "LA",
-                            StreetAddress = "123 BookWise St"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            City = "New WormBooks",
-                            Name = "Worm Books",
-                            PhoneNumber = "123 WormBooks 809",
-                            PostalCode = "5678",
-                            State = "NV",
-                            StreetAddress = "5N WormBooks Main St"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            City = "Bumble Pages Town",
-                            Name = "Bumble Pages",
-                            PhoneNumber = "",
-                            PostalCode = "8912",
-                            State = "NY",
-                            StreetAddress = "1 BumblePages St"
-                        });
                 });
 
             modelBuilder.Entity("Rigid.Models.Product", b =>
@@ -477,9 +448,6 @@ namespace Rigid.DataAccess.Migrations
                     b.Property<string>("City")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("CompanyId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -492,8 +460,6 @@ namespace Rigid.DataAccess.Migrations
 
                     b.Property<string>("StreetAddress")
                         .HasColumnType("nvarchar(max)");
-
-                    b.HasIndex("CompanyId");
 
                     b.HasDiscriminator().HasValue("ApplicationUser");
                 });
@@ -558,15 +524,6 @@ namespace Rigid.DataAccess.Migrations
                         .IsRequired();
 
                     b.Navigation("Category");
-                });
-
-            modelBuilder.Entity("Rigid.Models.ApplicationUser", b =>
-                {
-                    b.HasOne("Rigid.Models.Company", "Company")
-                        .WithMany()
-                        .HasForeignKey("CompanyId");
-
-                    b.Navigation("Company");
                 });
 #pragma warning restore 612, 618
         }
