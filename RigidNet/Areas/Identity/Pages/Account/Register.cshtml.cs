@@ -143,6 +143,7 @@ namespace RigidNet.Areas.Identity.Pages.Account
 				RoleList = _roleManager.Roles.Select(x => x.Name).Select(i => new SelectListItem { Text = i, Value = i }),
 				CompanyList = _unitOfWork.Company.GetAll().Select(i => new SelectListItem { Text = i.Name, Value = i.Id.ToString() })
 			};
+
 			ReturnUrl = returnUrl;
 			ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
 		}
@@ -212,6 +213,11 @@ namespace RigidNet.Areas.Identity.Pages.Account
 			}
 
 			// If we got this far, something failed, redisplay form
+			Input = new()
+			{
+				RoleList = _roleManager.Roles.Select(x => x.Name).Select(i => new SelectListItem { Text = i, Value = i }),
+				CompanyList = _unitOfWork.Company.GetAll().Select(i => new SelectListItem { Text = i.Name, Value = i.Id.ToString() })
+			};
 			return Page();
 		}
 
